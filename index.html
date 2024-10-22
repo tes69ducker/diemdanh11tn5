@@ -7,19 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Trang Điểm Danh Học Sinh</h1>
-    <form id="attendanceForm">
-        <label for="studentName">Tên học sinh:</label>
-        <input type="text" id="studentName" name="studentName" required>
-
-        <button type="submit">Điểm danh</button>
-    </form>
-    
-    <div id="attendanceList">
-        <h2>Danh sách điểm danh:</h2>
-        <ul id="studentList"></ul>
-    </div>
-
+    <h1>Điểm danh học sinh</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Họ và Tên</th>
+                <th>Trạng thái</th>
+                <th>Thời gian</th>
+            </tr>
+        </thead>
+        <tbody id="student-list">
+            <!-- Danh sách học sinh sẽ được thêm ở đây -->
+        </tbody>
+    </table>
     <script src="script.js"></script>
 </body>
 </html>
