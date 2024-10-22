@@ -54,22 +54,35 @@ students.forEach(student => {
     row.innerHTML = `
         <td>${student.id}</td>
         <td>${student.name}</td>
-        <td class="status" onclick="toggleStatus(this)">${student.status}</td>
+        <td onclick="toggleStatus(this)">${student.status}</td>
         <td>${student.time}</td>
     `;
     studentList.appendChild(row);
 });
 
-// Hàm để thay đổi trạng thái điểm danh
 function toggleStatus(element) {
-    if (element.innerText === "Chưa điểm danh") {
+    const currentStatus = element.innerText;
+    const studentRow = element.parentElement;
+    const timeCell = studentRow.cells[3]; 
+
+    if (currentStatus === "Chưa điểm danh") {
         element.innerText = "Đã điểm danh";
-        element.style.backgroundColor = "#4caf50"; // Màu xanh lá cây
+        element.style.backgroundColor = "#4caf50"; 
         const currentTime = new Date().toLocaleTimeString();
-        element.nextElementSibling.innerText = currentTime; // Cập nhật thời gian
+        timeCell.innerText = currentTime; 
     } else {
         element.innerText = "Chưa điểm danh";
-        element.style.backgroundColor = ""; // Trở về màu mặc định
-        element.nextElementSibling.innerText = ""; // Xóa thời gian
+        element.style.backgroundColor = ""; 
+        timeCell.innerText = ""; 
     }
+}
+
+function searchStudents() {
+    const input = document.getElementById('search').value.toLowerCase();
+    const rows = document.querySelectorAll('#student-list tr');
+
+    rows.forEach(row => {
+        const name = row.cells[1].innerText.toLowerCase();
+        row.style.display = name.includes(input) ? '' : 'none';
+    });
 }

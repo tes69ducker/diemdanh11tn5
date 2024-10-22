@@ -5,10 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Điểm Danh Học Sinh</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Điểm Danh Học Sinh</h1>
-    <img src="https://media.giphy.com/media/JIX8tTXd_3jPZ4g6X5/giphy.gif" alt="Hình ảnh động" style="display: block; margin: 0 auto; width: 300px; border-radius: 10px;">
+    <header>
+        <h1>Điểm Danh Học Sinh</h1>
+    </header>
+    <div class="images-container">
+        <img src="https://media.giphy.com/media/Sw6DHJ5YwjdhwzzJyD/giphy.gif" alt="Học sinh hài hước">
+        <img src="https://media.giphy.com/media/LgjxLDN25VZTpFhSYs/giphy.gif" alt="Học sinh vui vẻ">
+        <img src="https://media.giphy.com/media/JVJhNKifw9eLMAWdBk/giphy.gif" alt="Học sinh ngốc nghếch">
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="search" oninput="searchStudents()" placeholder="Tìm kiếm học sinh...">
+    </div>
+
     <table>
         <thead>
             <tr>
@@ -23,7 +35,7 @@
         </tbody>
     </table>
     <footer>
-        <p>&copy; 2024 Điểm danh học sinh - Tất cả quyền được bảo lưu</p>
+        <p>&copy; Điểm danh học sinh 11TN5 - By Ducker</p>
     </footer>
     <script src="script.js"></script>
 </body>
